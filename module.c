@@ -167,7 +167,7 @@ PyMODINIT_FUNC PyInit_pyyolo(void)
 	PyObject *m;
 
 	m = PyModule_Create(&pyyolo_module);
-	if (m == NULL) return;
+	if (m == NULL) return NULL;
 
 	PyyoloError = PyErr_NewException("pyyolo.error", NULL, NULL);
 	Py_INCREF(PyyoloError);
@@ -181,7 +181,7 @@ PyMODINIT_FUNC initpyyolo(void)
 	PyObject *m;
 
 	m = Py_InitModule("pyyolo", pyyolo_methods);
-	if (m == NULL) return;
+	if (m == NULL) return NULL;
 
 	PyyoloError = PyErr_NewException("pyyolo.error", NULL, NULL);
 	Py_INCREF(PyyoloError);
